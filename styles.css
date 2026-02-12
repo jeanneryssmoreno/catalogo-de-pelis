@@ -1,0 +1,936 @@
+/* ========================================
+   CSS RESET & BASE STYLES
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========================================
+   CSS CUSTOM PROPERTIES (Design Tokens)
+   ======================================== */
+
+:root {
+  /* Netflix Color Palette */
+  --color-netflix-red: #e50914;
+  --color-netflix-dark-red: #b20710;
+  --color-bg-primary: #141414;
+  --color-bg-secondary: #1a1a1a;
+  --color-bg-card: #2a2a2a;
+  --color-bg-card-hover: #333333;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b3b3b3;
+  --color-text-muted: #808080;
+
+  /* Genre Badge Colors */
+  --color-drama: #9c27b0;
+  --color-crime: #f44336;
+  --color-action: #ff5722;
+  --color-scifi: #00bcd4;
+  --color-thriller: #ff9800;
+  
+  /* Dynamic Branding Colors */
+  --color-flex: #00bcd4;
+  --color-grid: #4caf50;
+
+  /* Typography */
+  --font-primary:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: "Outfit", "Inter", sans-serif;
+
+  /* Spacing Scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+/* ========================================
+   GLOBAL STYLES
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--color-netflix-red);
+  color: white;
+  padding: var(--space-sm) var(--space-md);
+  text-decoration: none;
+  border-radius: 0 0 var(--radius-md) 0;
+  font-weight: 600;
+  z-index: 10000;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus Visible Styles */
+*:focus-visible {
+  outline: 3px solid var(--color-netflix-red);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.header {
+  background: linear-gradient(
+    180deg,
+    rgba(20, 20, 20, 0.95) 0%,
+    rgba(20, 20, 20, 0.8) 100%
+  );
+  backdrop-filter: blur(10px);
+  padding: var(--space-md) var(--space-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-md);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.logo-cine {
+  color: var(--color-netflix-red);
+  text-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+}
+
+.logo-max {
+  color: var(--color-text-primary);
+}
+
+/* Dynamic logo styling */
+.logo-dynamic {
+  color: var(--color-flex);
+  transition: color var(--transition-normal);
+  text-shadow: 0 0 20px currentColor;
+}
+
+.search-container {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+  min-width: 200px;
+}
+
+.search-input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  padding-left: 2.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+  font-family: var(--font-primary);
+  transition: all var(--transition-normal);
+}
+
+.search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.search-input:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.search-input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--color-netflix-red);
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  left: var(--space-sm);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+/* ========================================
+   MAIN CONTENT
+   ======================================== */
+
+.main-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-sm) var(--space-sm); /* Mínimo padding */
+  min-height: calc(100vh - 200px);
+}
+
+/* ========================================
+   TAB NAVIGATION (Now in Header)
+   ======================================== */
+
+.tab-navigation {
+  display: flex;
+  gap: var(--space-xs); /* Reducido para tabs compactos */
+  align-items: center;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.5rem 1rem; /* Más compacto */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde más fino */
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  font-family: var(--font-heading);
+  font-size: 0.9rem; /* Más pequeño */
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: left var(--transition-slow);
+}
+
+.tab-button:hover::before {
+  left: 100%;
+}
+
+.tab-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text-primary);
+  transform: translateY(-1px); /* Menos movimiento */
+  box-shadow: var(--shadow-sm); /* Sombra más sutil */
+}
+
+.tab-button.active {
+  background: linear-gradient(
+    135deg,
+    var(--color-netflix-red) 0%,
+    var(--color-netflix-dark-red) 100%
+  );
+  border-color: var(--color-netflix-red);
+  color: var(--color-text-primary);
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.3); /* Sombra más sutil */
+}
+
+.tab-icon {
+  flex-shrink: 0;
+  display: none; /* Ocultar iconos para tabs compactos */
+}
+
+/* ========================================
+   CATALOG SECTIONS
+   ======================================== */
+
+.catalog-section {
+  display: none;
+  animation: fadeIn var(--transition-normal);
+}
+
+.catalog-section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.catalog-header {
+  margin-bottom: var(--space-md); /* Reducido de xl a md */
+  text-align: left; /* Cambiado de center a left */
+}
+
+.catalog-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+  background: linear-gradient(135deg, #ffffff 0%, #b3b3b3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.catalog-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+/* ========================================
+   FLEXBOX LAYOUT
+   Cards con bordes redondeados y sombras suaves
+   ======================================== */
+
+.catalog-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+}
+
+.catalog-flex .movie-card {
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+
+/* Flexbox cards tienen bordes más redondeados y efecto de elevación */
+.catalog-flex .movie-card {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  max-width: 220px; /* Reducido de 280px a 220px */
+}
+
+/* Flexbox: Poster más compacto */
+.catalog-flex .movie-poster-container {
+  padding-top: 140%; /* Ajustado para mejor proporción */
+}
+
+.catalog-flex .movie-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-xl);
+}
+
+/* ========================================
+   GRID LAYOUT
+   Cards con bordes más rectos y efectos diferentes
+   ======================================== */
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 columna en móvil */
+  gap: var(--space-md);
+  grid-auto-rows: minmax(240px, auto); /* Reducido para cards más compactas en móvil */
+}
+
+/* Las cards en grid deben ocupar toda la altura de la celda */
+.catalog-grid .movie-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-lg);
+  overflow: hidden; /* Asegurar que nada se salga */
+  position: relative;
+  box-shadow: 
+    0 8px 24px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(145deg, rgba(30, 30, 30, 0.95) 0%, rgba(20, 20, 20, 0.98) 100%);
+  transition: all var(--transition-normal);
+}
+
+/* En Grid, el container del poster ocupa el espacio disponible */
+.catalog-grid .movie-poster-container {
+  padding-top: 0 !important; /* Eliminar hack de aspect ratio */
+  flex: 1; /* Crecer para ocupar espacio */
+  position: relative;
+  width: 100%;
+  min-height: 0; /* Evitar desbordamiento en flex */
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+}
+
+.catalog-grid .movie-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Llenar completamente el espacio */
+  object-position: center; /* Centrar la imagen */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform var(--transition-slow), filter var(--transition-normal);
+  filter: brightness(0.95) contrast(1.05);
+}
+
+.catalog-grid .movie-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(229, 9, 20, 0.15) 0%,
+    rgba(139, 0, 139, 0.15) 50%,
+    rgba(0, 100, 200, 0.15) 100%
+  );
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.catalog-grid .movie-card:hover::before {
+  opacity: 0.8;
+}
+
+.catalog-grid .movie-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 0 40px rgba(229, 9, 20, 0.6),
+    0 0 80px rgba(229, 9, 20, 0.3),
+    0 16px 48px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(255, 255, 255, 0.3);
+  border-color: rgba(229, 9, 20, 0.5);
+}
+
+.catalog-grid .movie-card:hover .movie-poster {
+  transform: scale(1.08);
+  filter: brightness(1.1) contrast(1.1);
+}
+
+/* Grid: Película destacada (2x2) */
+.catalog-grid .movie-card.featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* Grid: Dimensiones variadas para demostrar poder bidimensional */
+/* En móvil, todas las cards ocupan 1x1 */
+.catalog-grid .grid-wide,
+.catalog-grid .grid-tall,
+.catalog-grid .grid-hero,
+.catalog-grid .featured,
+.catalog-grid .grid-normal {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* Eliminar estilos específicos de aspect ratio anteriores ya que usamos flex: 1 */
+.catalog-grid .grid-hero .movie-poster-container,
+.catalog-grid .featured .movie-poster-container,
+.catalog-grid .grid-wide .movie-poster-container,
+.catalog-grid .grid-tall .movie-poster-container,
+.catalog-grid .grid-normal .movie-poster-container {
+  padding-top: 0 !important;
+}
+
+/* Featured badge */
+.featured-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--color-netflix-red) 0%, var(--color-netflix-dark-red) 100%);
+  color: white;
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-xs);
+  box-shadow: 0 2px 8px rgba(229, 9, 20, 0.4);
+}
+
+/* ========================================
+   GRID CARD SIZE VARIANTS - Image Optimization
+   ======================================== */
+
+/* HERO Cards (2x2) - Imagen completa sin recortes */
+.catalog-grid .grid-hero .movie-poster {
+  object-fit: contain; /* Mostrar imagen completa sin recortar */
+  object-position: center top;
+  background: var(--color-bg-card);
+}
+
+/* WIDE Cards (2x1) - Imagen completa horizontal */
+.catalog-grid .grid-wide .movie-poster {
+  object-fit: contain; /* Mostrar imagen completa sin recortar */
+  object-position: center top;
+  background: var(--color-bg-card);
+}
+
+/* TALL Cards (1x2) - Imagen completa vertical */
+.catalog-grid .grid-tall .movie-poster {
+  object-fit: contain; /* Mostrar póster completo en vertical */
+  object-position: center top;
+}
+
+/* NORMAL Cards (1x1) - Imagen completa estándar */
+.catalog-grid .grid-normal .movie-poster {
+  object-fit: contain; /* Mantener imagen completa */
+  object-position: center top;
+}
+
+/* ========================================
+   SKELETON LOADING EFFECT
+   ======================================== */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    #2a2a2a 0%,
+    #3a3a3a 50%,
+    #2a2a2a 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton-poster {
+  width: 100%;
+  padding-top: 130%;
+  background: linear-gradient(
+    90deg,
+    #2a2a2a 0%,
+    #3a3a3a 50%,
+    #2a2a2a 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.skeleton-text {
+  height: 1rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(
+    90deg,
+    #2a2a2a 0%,
+    #3a3a3a 50%,
+    #2a2a2a 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
+
+.skeleton-text.short {
+  width: 60%;
+}
+
+/* Ocultar skeleton cuando carga */
+.movie-card.loaded .skeleton,
+.movie-card.loaded .skeleton-poster,
+.movie-card.loaded .skeleton-text {
+  display: none;
+}
+
+/* Mostrar contenido cuando carga */
+.movie-card:not(.loaded) .movie-poster,
+.movie-card:not(.loaded) .movie-info > *:not(.skeleton):not(.skeleton-text) {
+  opacity: 0;
+}
+
+/* ========================================
+   MOVIE CARDS (Shared Styles)
+   ======================================== */
+
+.movie-card {
+  background: var(--color-bg-card);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.movie-poster-container {
+  position: relative;
+  width: 100%;
+  padding-top: 140%; /* Reducido de 150% para cards más compactas */
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+}
+
+.movie-poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.movie-card:hover .movie-poster {
+  transform: scale(1.1);
+}
+
+.movie-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.movie-card:hover .movie-overlay {
+  opacity: 1;
+}
+
+.play-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--color-netflix-red);
+  border: 3px solid white;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-lg);
+}
+
+.play-button:hover {
+  transform: scale(1.15);
+  background: var(--color-netflix-dark-red);
+  box-shadow: 0 0 30px rgba(229, 9, 20, 0.6);
+}
+
+.movie-info {
+  padding: var(--space-md);
+  flex-shrink: 0;
+  min-height: 100px;
+  max-height: 140px;
+  overflow: hidden;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 20, 20, 0.95) 0%,
+    rgba(15, 15, 15, 0.98) 100%
+  );
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+.movie-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  letter-spacing: 0.3px;
+}
+
+.movie-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs); /* Reducido de sm a xs */
+  flex-wrap: wrap;
+  font-size: 0.8rem; /* Reducido de 0.9rem */
+}
+
+.movie-year {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.genre-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.genre-badge.drama {
+  background: var(--color-drama);
+  color: white;
+}
+
+.genre-badge.crime {
+  background: var(--color-crime);
+  color: white;
+}
+
+.genre-badge.action {
+  background: var(--color-action);
+  color: white;
+}
+
+.genre-badge.scifi {
+  background: var(--color-scifi);
+  color: white;
+}
+
+.genre-badge.thriller {
+  background: var(--color-thriller);
+  color: white;
+}
+
+.movie-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: #ffd700;
+  font-weight: 600;
+  margin-left: auto;
+}
+
+.star-icon {
+  flex-shrink: 0;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.footer {
+  background: var(--color-bg-secondary);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-xl) var(--space-sm);
+  margin-top: var(--space-2xl);
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-text {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+  font-size: 0.95rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--space-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: var(--color-netflix-red);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN (Mobile-First)
+   ======================================== */
+
+/* Tablet: 768px and up */
+@media (min-width: 768px) {
+  .header {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .main-content {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  /* Flexbox: 2 columns on tablet */
+  .catalog-flex .movie-card {
+    flex: 1 1 calc(50% - var(--space-md));
+    max-width: calc(50% - var(--space-md));
+  }
+
+  /* Grid: 3 columns on tablet */
+  .catalog-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(280px, auto); /* Reducido para mejor visualización */
+  }
+  
+  /* Reactivar spans para cards especiales en tablet */
+  .catalog-grid .grid-wide {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  
+  .catalog-grid .grid-tall {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+  
+  /* Featured y hero se comportan como grid-wide en tablet (2x1) */
+  .catalog-grid .featured,
+  .catalog-grid .grid-hero {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+}
+
+/* Desktop: 1024px and up */
+@media (min-width: 1024px) {
+  .main-content {
+    padding: var(--space-2xl) var(--space-lg);
+  }
+
+  /* Flexbox: 4 columns on desktop */
+  .catalog-flex .movie-card {
+    flex: 1 1 calc(25% - var(--space-md));
+    max-width: calc(25% - var(--space-md));
+  }
+
+  /* Grid: 5 columns on desktop */
+  .catalog-grid {
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: minmax(260px, auto); /* Reducido para cards más compactas */
+    gap: var(--space-md);
+  }
+
+  .catalog-flex {
+    gap: var(--space-lg);
+  }
+  
+  /* En desktop, featured puede ser 2x2 */
+  .catalog-grid .featured,
+  .catalog-grid .grid-hero {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  
+  /* Reactivar todos los spans en desktop */
+  .catalog-grid .grid-wide {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  
+  .catalog-grid .grid-tall {
+    grid-column: span 1;
+    grid-row: span 2;
+  }
+}
+
+/* Large Desktop: 1440px and up */
+@media (min-width: 1440px) {
+  /* Grid: 6 columns on large desktop */
+  .catalog-grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: minmax(250px, auto);
+    gap: var(--space-lg);
+  }
+
+  .catalog-flex {
+    gap: var(--space-xl);
+  }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+  .header,
+  .tab-navigation,
+  .footer {
+    display: none;
+  }
+
+  .movie-card {
+    break-inside: avoid;
+  }
+}

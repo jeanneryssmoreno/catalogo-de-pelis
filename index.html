@@ -1,0 +1,1477 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Catálogo de películas con layouts Flexbox y Grid - Estilo Netflix"
+    />
+    <title>CineMax - Catálogo de Películas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Header Section with Integrated Tabs -->
+    <header class="header">
+      <div class="header-container">
+        <h1 class="logo">
+          <span class="logo-cine">CINE</span><span class="logo-dynamic" id="logo-dynamic">FLEX</span>
+        </h1>
+        <div class="search-container">
+          <label for="search-input" class="visually-hidden"
+            >Buscar películas</label
+          >
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder="Buscar películas..."
+            aria-label="Buscar películas por título"
+          />
+          <svg
+            class="search-icon"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+        </div>
+        
+        <!-- Compact Tabs in Header -->
+        <nav
+          class="tab-navigation"
+          role="tablist"
+          aria-label="Seleccionar tipo de layout"
+        >
+          <button
+            class="tab-button active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="flexbox-panel"
+            id="flexbox-tab"
+            data-tab="flexbox"
+          >
+            Flexbox
+          </button>
+          <button
+            class="tab-button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="grid-panel"
+            id="grid-tab"
+            data-tab="grid"
+          >
+            Grid
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content">
+
+      <!-- Flexbox Catalog -->
+      <section
+        id="flexbox-panel"
+        class="catalog-section active"
+        role="tabpanel"
+        aria-labelledby="flexbox-tab"
+      >
+        <div class="catalog catalog-flex">
+          <!-- Movie Card 1 -->
+          <article class="movie-card">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg"
+                alt="Poster de la película The Shawshank Redemption"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button
+                  class="play-button"
+                  aria-label="Reproducir The Shawshank Redemption"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">The Shawshank Redemption</h3>
+              <div class="movie-meta">
+                <span class="movie-year">1994</span>
+                <span class="genre-badge drama">Drama</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  9.3
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Movie Card 2 -->
+          <article class="movie-card">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg"
+                alt="Poster de la película The Godfather"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button
+                  class="play-button"
+                  aria-label="Reproducir The Godfather"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">The Godfather</h3>
+              <div class="movie-meta">
+                <span class="movie-year">1972</span>
+                <span class="genre-badge crime">Crimen</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  9.2
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Movie Card 3 -->
+          <article class="movie-card">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg"
+                alt="Poster de la película The Dark Knight"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button
+                  class="play-button"
+                  aria-label="Reproducir The Dark Knight"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">The Dark Knight</h3>
+              <div class="movie-meta">
+                <span class="movie-year">2008</span>
+                <span class="genre-badge action">Acción</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  9.0
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Movie Card 4 -->
+          <article class="movie-card">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/3bgtUfKQKNi3nJsAB5URpP2wdRt.jpg"
+                alt="Poster de la película Pulp Fiction"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button
+                  class="play-button"
+                  aria-label="Reproducir Pulp Fiction"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Pulp Fiction</h3>
+              <div class="movie-meta">
+                <span class="movie-year">1994</span>
+                <span class="genre-badge crime">Crimen</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.9
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Movie Card 5 -->
+          <article class="movie-card">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg"
+                alt="Poster de la película Forrest Gump"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button
+                  class="play-button"
+                  aria-label="Reproducir Forrest Gump"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Forrest Gump</h3>
+              <div class="movie-meta">
+                <span class="movie-year">1994</span>
+                <span class="genre-badge drama">Drama</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.8
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Movie Card 6 -->
+          <article class="movie-card">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg"
+                alt="Poster de la película Inception"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button class="play-button" aria-label="Reproducir Inception">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Inception</h3>
+              <div class="movie-meta">
+                <span class="movie-year">2010</span>
+                <span class="genre-badge scifi">Sci-Fi</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.8
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Movie Card 7 -->
+          <article class="movie-card">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/9O7gLzmreU0nGkIB6K3BsJbzvNv.jpg"
+                alt="Poster de la película Interstellar"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button
+                  class="play-button"
+                  aria-label="Reproducir Interstellar"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Interstellar</h3>
+              <div class="movie-meta">
+                <span class="movie-year">2014</span>
+                <span class="genre-badge scifi">Sci-Fi</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.6
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Movie Card 8 -->
+          <article class="movie-card">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg"
+                alt="Poster de la película Fight Club"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button class="play-button" aria-label="Reproducir Fight Club">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Fight Club</h3>
+              <div class="movie-meta">
+                <span class="movie-year">1999</span>
+                <span class="genre-badge drama">Drama</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.8
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Movie Card 9 -->
+          <article class="movie-card">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg"
+                alt="Poster de la película The Matrix"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button class="play-button" aria-label="Reproducir The Matrix">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">The Matrix</h3>
+              <div class="movie-meta">
+                <span class="movie-year">1999</span>
+                <span class="genre-badge scifi">Sci-Fi</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.7
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Movie Card 10 -->
+          <article class="movie-card">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/lxD5ak7BOoinRNehOCA85CQ8ubr.jpg"
+                alt="Poster de la película Parasite"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button class="play-button" aria-label="Reproducir Parasite">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Parasite</h3>
+              <div class="movie-meta">
+                <span class="movie-year">2019</span>
+                <span class="genre-badge thriller">Thriller</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.6
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Movie Card 11 -->
+          <article class="movie-card">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/yPVqBbYWYJhCDXqIQQCM3YbF3Jj.jpg"
+                alt="Poster de la película Gladiator"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button class="play-button" aria-label="Reproducir Gladiator">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Gladiator</h3>
+              <div class="movie-meta">
+                <span class="movie-year">2000</span>
+                <span class="genre-badge action">Acción</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.5
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Movie Card 12 -->
+          <article class="movie-card">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg"
+                alt="Poster de la película The Prestige"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button
+                  class="play-button"
+                  aria-label="Reproducir The Prestige"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">The Prestige</h3>
+              <div class="movie-meta">
+                <span class="movie-year">2006</span>
+                <span class="genre-badge thriller">Thriller</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.5
+                </span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Grid Catalog -->
+      <section
+        id="grid-panel"
+        class="catalog-section"
+        role="tabpanel"
+        aria-labelledby="grid-tab"
+        aria-hidden="true"
+      >
+        <div class="catalog catalog-grid">
+          <!-- Same 12 movie cards repeated for Grid layout -->
+          <article class="movie-card grid-wide">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/qNBAXBIQlnOThrVvA6mA2B5ggV6.jpg"
+                alt="Poster de la película The Shawshank Redemption"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button
+                  class="play-button"
+                  aria-label="Reproducir The Shawshank Redemption"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <span class="featured-badge">MÁS VISTA</span>
+              <h3 class="movie-title">The Shawshank Redemption</h3>
+              <div class="movie-meta">
+                <span class="movie-year">1994</span>
+                <span class="genre-badge drama">Drama</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  9.3
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="movie-card grid-normal">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg"
+                alt="Poster de la película The Godfather"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button
+                  class="play-button"
+                  aria-label="Reproducir The Godfather"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">The Godfather</h3>
+              <div class="movie-meta">
+                <span class="movie-year">1972</span>
+                <span class="genre-badge crime">Crimen</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  9.2
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="movie-card grid-normal">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg"
+                alt="Poster de la película The Dark Knight"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button
+                  class="play-button"
+                  aria-label="Reproducir The Dark Knight"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">The Dark Knight</h3>
+              <div class="movie-meta">
+                <span class="movie-year">2008</span>
+                <span class="genre-badge action">Acción</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  9.0
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="movie-card grid-wide">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/3bgtUfKQKNi3nJsAB5URpP2wdRt.jpg"
+                alt="Poster de la película Pulp Fiction"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button
+                  class="play-button"
+                  aria-label="Reproducir Pulp Fiction"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Pulp Fiction</h3>
+              <div class="movie-meta">
+                <span class="movie-year">1994</span>
+                <span class="genre-badge crime">Crimen</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.9
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="movie-card grid-tall">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg"
+                alt="Poster de la película Forrest Gump"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button
+                  class="play-button"
+                  aria-label="Reproducir Forrest Gump"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Forrest Gump</h3>
+              <div class="movie-meta">
+                <span class="movie-year">1994</span>
+                <span class="genre-badge drama">Drama</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.8
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="movie-card grid-normal">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg"
+                alt="Poster de la película Inception"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button class="play-button" aria-label="Reproducir Inception">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Inception</h3>
+              <div class="movie-meta">
+                <span class="movie-year">2010</span>
+                <span class="genre-badge scifi">Sci-Fi</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.8
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="movie-card grid-wide">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/9O7gLzmreU0nGkIB6K3BsJbzvNv.jpg"
+                alt="Poster de la película Interstellar"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button
+                  class="play-button"
+                  aria-label="Reproducir Interstellar"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Interstellar</h3>
+              <div class="movie-meta">
+                <span class="movie-year">2014</span>
+                <span class="genre-badge scifi">Sci-Fi</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.6
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="movie-card grid-normal">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/d5NXSklXo0qyIYkgV94XAgMIckC.jpg"
+                alt="Poster de la película Fight Club"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button class="play-button" aria-label="Reproducir Fight Club">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Fight Club</h3>
+              <div class="movie-meta">
+                <span class="movie-year">1999</span>
+                <span class="genre-badge drama">Drama</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.8
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="movie-card grid-normal">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg"
+                alt="Poster de la película The Matrix"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button class="play-button" aria-label="Reproducir The Matrix">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">The Matrix</h3>
+              <div class="movie-meta">
+                <span class="movie-year">1999</span>
+                <span class="genre-badge scifi">Sci-Fi</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.7
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="movie-card grid-tall">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/lxD5ak7BOoinRNehOCA85CQ8ubr.jpg"
+                alt="Poster de la película Parasite"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button class="play-button" aria-label="Reproducir Parasite">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Parasite</h3>
+              <div class="movie-meta">
+                <span class="movie-year">2019</span>
+                <span class="genre-badge thriller">Thriller</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.6
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="movie-card grid-normal">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/yPVqBbYWYJhCDXqIQQCM3YbF3Jj.jpg"
+                alt="Poster de la película Gladiator"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button class="play-button" aria-label="Reproducir Gladiator">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Gladiator</h3>
+              <div class="movie-meta">
+                <span class="movie-year">2000</span>
+                <span class="genre-badge action">Acción</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.5
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="movie-card grid-normal">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg"
+                alt="Poster de la película The Prestige"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button
+                  class="play-button"
+                  aria-label="Reproducir The Prestige"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">The Prestige</h3>
+              <div class="movie-meta">
+                <span class="movie-year">2006</span>
+                <span class="genre-badge thriller">Thriller</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.5
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="movie-card grid-normal">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/rhIRbceoE9lR4veEXuwCC2wARtG.jpg"
+                alt="Poster de la película Toy Story"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button
+                  class="play-button"
+                  aria-label="Reproducir Toy Story"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Toy Story</h3>
+              <div class="movie-meta">
+                <span class="movie-year">1995</span>
+                <span class="genre-badge action">Animación</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.3
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="movie-card grid-wide">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"
+                alt="Poster de la película Avengers"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button
+                  class="play-button"
+                  aria-label="Reproducir Avengers"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Avengers: Endgame</h3>
+              <div class="movie-meta">
+                <span class="movie-year">2019</span>
+                <span class="genre-badge action">Acción</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.4
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="movie-card grid-normal">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg"
+                alt="Poster de la película Joker"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button class="play-button" aria-label="Reproducir Joker">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Joker</h3>
+              <div class="movie-meta">
+                <span class="movie-year">2019</span>
+                <span class="genre-badge thriller">Thriller</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  8.5
+                </span>
+              </div>
+            </div>
+          </article>
+
+          <article class="movie-card grid-normal">
+            <div class="movie-poster-container">
+              <img
+                src="https://image.tmdb.org/t/p/w500/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg"
+                alt="Poster de la película Titanic"
+                class="movie-poster"
+                loading="lazy"
+              />
+              <div class="movie-overlay">
+                <button class="play-button" aria-label="Reproducir Titanic">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="movie-info">
+              <h3 class="movie-title">Titanic</h3>
+              <div class="movie-meta">
+                <span class="movie-year">1997</span>
+                <span class="genre-badge drama">Drama</span>
+                <span class="movie-rating">
+                  <svg
+                    class="star-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                  7.9
+                </span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <p class="footer-text">
+          &copy; 2026 CineMax. Proyecto educativo - Flexbox vs Grid
+        </p>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Términos de uso</a>
+          <a href="#" class="footer-link">Privacidad</a>
+          <a href="#" class="footer-link">Contacto</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
