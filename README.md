@@ -57,7 +57,7 @@ jeannerys-moreno-grid-flex/
 ├── styles.css          # Estilos con diseño Netflix
 ├── app.js              # Lógica de interacción
 ├── README.md           # Este archivo
-└── archivo.md          # Especificación de la tarea
+
 ```
 
 ---
@@ -88,15 +88,12 @@ jeannerys-moreno-grid-flex/
 
 ## 🎨 Capturas de Pantalla
 
-### Desktop - Flexbox Layout
+### movile - Flexbox Layout
+![Captura de pantalla 2026-02-12 144802](https://github.com/user-attachments/assets/f3fc11e2-e50b-42bb-b92e-5b1b554ab944)
 
-![Flexbox Layout](initial_flexbox_layout_1770909461048.png)
-_Layout con Flexbox: Cards con bordes redondeados y efecto de elevación_
 
 ### Desktop - Grid Layout
-
-![Grid Layout](grid_layout_view_1770909483016.png)
-_Layout con CSS Grid: Cards con bordes rectos y efecto de brillo_
+![Captura de pantalla 2026-02-12 144914](https://github.com/user-attachments/assets/6e32bf15-b8d3-4a27-9cc2-9d3c07a92f2c)
 
 ---
 
@@ -281,27 +278,3 @@ Este proyecto implementa accesibilidad completa según WCAG 2.1 AA:
 Proyecto educativo - Intensivo Spartan Tasks  
 Práctica Final CSS: Flexbox vs Grid
 
----
-
-## 📄 Licencia
-
-Este es un proyecto educativo sin fines comerciales. Las imágenes de películas pertenecen a sus respectivos propietarios y se usan únicamente con fines demostrativos.
-
----
-
-## 🙏 Agradecimientos
-
-- **Netflix** por la inspiración de diseño
-- **TMDB** por las imágenes de películas
-- **Google Fonts** por las tipografías Inter y Outfit
-- **MDN Web Docs** por la documentación de referencia
-
----
-
-## 📞 Contacto
-
-¿Preguntas o sugerencias? Abre un issue en el repositorio.
-
----
-
-**⭐ Si te gustó este proyecto, dale una estrella!**
