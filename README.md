@@ -88,11 +88,11 @@ jeannerys-moreno-grid-flex/
 
 ## 🎨 Capturas de Pantalla
 
-### movile - Flexbox Layout
+### movile - GRID Layout
 ![Captura de pantalla 2026-02-12 144802](https://github.com/user-attachments/assets/f3fc11e2-e50b-42bb-b92e-5b1b554ab944)
 
 
-### Desktop - Grid Layout
+### Desktop - FLEXBOX Layout
 ![Captura de pantalla 2026-02-12 144914](https://github.com/user-attachments/assets/6e32bf15-b8d3-4a27-9cc2-9d3c07a92f2c)
 
 ---
